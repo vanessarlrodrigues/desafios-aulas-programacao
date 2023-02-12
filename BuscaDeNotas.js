@@ -1,7 +1,7 @@
 
 let notas = [
     ["Augusto", 3],
-    ["João", 9],
+    ["Joao", 9],
     ["Lucas", 2],
     ["Chico", 10],
     ["Joana", 9],
