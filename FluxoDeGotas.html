@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fluxo Gotas</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <button id="gota">GOTA</button>
+        <script type="text/javascript">
+            let gotasTimesTamp=[];
+            let numeroGotas=3;
+
+            function gota() {
+                if(gotasTimesTamp.length == numeroGotas){
+                calcularDeltas();
+            } else {
+                gotasTimesTamp.push(+new Date());
+            }      
+          }
+          let deltas=[];
+          function calcularDeltas() {
+            for (let i=1; i<gotasTimesTamp.length; i++) {
+                deltas.push(gotasTimesTamp[i] - gotasTimesTamp[i-1]);
+            }
+            let soma=0; 
+            for (let i=0; i<deltas.length; i++){
+                soma += deltas[i];
+            }
+            let media = soma/deltas.length;
+            console.log("A média é: " + media + " milissegundos.")
+          }
+          document.querySelector("#gota").addEventListener("click",gota);
+
+        </script>
+    </body>
