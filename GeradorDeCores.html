@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerar Cores</title>
+    <meta charset="UTF-8"/>
+    <style>
+        #botao-gerar-cor {
+            color: purple;
+            background-color: rgb(233, 30, 212);
+            padding: 10px 20px;
+            border:15px solid purple;
+            cursor: pointer;
+            transition: 2000ms;
+            font-weight: bold;
+        }
+        #botao-gerar-cor:hover {
+            background-color: blue;
+        }
+        #cor {
+            width: 150px;
+            height: 65px;
+            margin-top: 30px;
+            text-align: center;  
+        }
+    </style>
+</head>
+<body>
+    <button id="botao-gerar-cor">GERAR COR</button>
+    <div id="cor">COR</div>
+    <script type="text/javascript">
+        function gerarCor() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            document.querySelector("#cor").style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+        }
+        document.querySelector("#botao-gerar-cor").addEventListener('click', gerarCor);
+    </script>
+    <body>
+        <html>
