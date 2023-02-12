@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contador - Aula</title>
+  </head>
+  <body>
+    <h1>Contador</h1>
+    <span id="valor-contador" style="color: red;">0</span>
+    <button id="button-contador-1" onclick= "buttonClicado(1)">+1</button>
+    <button id="button-contador-2" onclick= "buttonClicado(-1)">-1</button>
+    <button id="button-contador-3" onclick= "buttonClicado(10)">+10</button>
+    <button id="button-contador-4" onclick= "buttonClicado(-10)">-10</button>
+    <button id="button-contador-5" onclick= "buttonClicado(100)">+100</button>
+    <button id="button-contador-6" onclick= "buttonClicado(-100)">-100</button>
+    <br/>
+    <br/>
+    <span id="valor-contador-2" style="color: yellow;">0</span>
+    <button id="button-gerar-numero" onclick="gerarNumeroAleatorio()">Gerar número</button>
+
+    <script type="text/javascript">
+        let contador = 0;
+        let contador2 = 0;
+
+        function buttonClicado(valor) {
+         if(contador + valor < 0){
+          alert("números negativos não são pemitidos!")
+          return;
+         }
+         contador += valor;
+          document.querySelector("#valor-contador").innerText = contador;
+        }
+        
+        function gerarNumeroAleatorio(){
+            let min=0;
+            let valorAtualDoContador= parseInt(document.querySelector("#valor-contador").innerText);
+            let max = valorAtualDoContador
+            let numeroAleatorio= Math.floor(Math.random() * (max - min) + min);
+            contador2=numeroAleatorio;
+            document.querySelector("#valor-contador-2").innerText = contador2;
+        }
+    </script>
+  </body>
+</html>
